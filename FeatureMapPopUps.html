@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Display a popup on click</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<style>
+.mapboxgl-popup {
+max-width: 400px;
+font: 12px/20px Helvetica Neue, Arial, Helvetica, 'sans-serif';
+font-style: normal;
+color: rgb(100, 104, 109);
+text-align: center;
+
+
+
+}
+</style>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiZWNocmlzdGllNzQ1IiwiYSI6ImNsMHVza2tsbjAwYWkzcW8xdjdnMW42bmMifQ.k-VAvTHDnIXVSuZWnrd3hA';
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/echristie745/cl2alihzh00b415pf0tw3kel8',
+center: [-8.1, 55.0136],
+zoom: 10
+});
+ 
+map.on('load', () => {
+
+
+
+map.addSource('places', {
+'type': 'geojson',
+'data': {
+'type': 'FeatureCollection',
+'features': [
+{
+      'type': 'Feature',
+      'properties': {
+        'description': 
+          '<strong>Lough Beagh<strong> <p>is the biggest lake in the park, containing several fish species including the endangered European eel<p>'
+        
+        
+        
+      },
+      'geometry': {
+        'type': 'Point',
+        'coordinates': 
+        [-7.971611022949219,
+          55.0388437866409]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": 
+          "<strong>Glenveagh Castle<strong> <p>was built in the 19th Century and is the central point of Glenveagh<p>"
+        
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.96757698059082,
+          55.03592960073619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": 
+          "<strong>Viewing Point<strong> <p>Head here to look over the park and a great view of the castle<p>"
+       
+        
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.965474128723145,
+          55.034109664043406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": 
+          "<strong>Glenveagh National Park Visitor Centre<strong> <p>Start your journey into Glenveagh here<p>"
+
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.936828136444092,
+          55.05640433798013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": 
+          "<strong>Lough Inshagh<strong> <p>This peaceful area of Glenveagh is a good place to spot red deeror golden eagles in the skies<p>"
+        
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.947063446044922,
+          55.02106026474805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": 
+          "<strong>Lough Nambraddan<strong> <p>This smaller lake sits at the base of Altachoastin mountain "
+        
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.967190742492675,
+          55.02160151184576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": 
+          "<strong>Astelleen Burn Waterfall<strong> <p>Hidden off the beaten track in Glenveagh, this waterfall is a hidden treasure!<p>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.012595176696777,
+          55.01729593506728
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": 
+          "<strong>The Poisoned Glen<strong> <p>Don't let the name fool you, this valley is one of the most beautiful spots in all of Ireland<p>"
+        
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": 
+          [-8.086795806884766,
+          55.00036438464206]
+        
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": 
+          "<strong>Dunlewey Church<strong> <p>This historic landmark is not to be missed! Sitting at the foot of Mount Errigal, this abandoned church still stands proudly<p>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.111686706542969,
+          55.01926425611404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": 
+          "<strong>Errigal<strong> <p>This mountain is the highest of the Derryveagh mountain range at 751m, and the most southernly of the 7 sisters mountain range<p>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.112974166870117,
+          55.0342941208512
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": 
+          "<strong>Slieve Snaght<strong> <p>This mountain stands 678m high. Be warned the climb goes through bog habitat so wear good shoes!<p>"
+            
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.120055198669434,
+          54.98076605428234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": 
+          "<strong>Glentornan Lough<strong> <p>Sitting at 2km long, this lake can be found at the base of Crocknafarragh<p>"
+           
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.186702728271484,
+          55.00486867797416
+        ]
+      }
+    }
+   
+
+]
+}
+});
+// Add a layer showing the places.
+map.addLayer({
+'id': 'places',
+'type': 'symbol',
+'source': 'places',
+'layout': {
+'icon-image': 'Binoculars',
+'icon-allow-overlap': true,
+'icon-size': 0.03
+}
+});
+ 
+// When a click event occurs on a feature in the places layer, open a popup at the
+// location of the feature, with description HTML from its properties.
+map.on('click', 'places', (e) => {
+// Copy coordinates array.
+const coordinates = e.features[0].geometry.coordinates.slice();
+const description = e.features[0].properties.description;
+ 
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+}
+ 
+new mapboxgl.Popup()
+.setLngLat(coordinates)
+.setHTML(description)
+.addTo(map);
+});
+ 
+// Change the cursor to a pointer when the mouse is over the places layer.
+map.on('mouseenter', 'places', () => {
+map.getCanvas().style.cursor = 'pointer';
+});
+ 
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'places', () => {
+map.getCanvas().style.cursor = '';
+});
+});
+</script>
+ 
+</body>
+</html>
